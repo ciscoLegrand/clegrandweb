@@ -73,3 +73,5 @@ end
 
 # env
 gem 'figaro'
+
+gem 'view_component'
