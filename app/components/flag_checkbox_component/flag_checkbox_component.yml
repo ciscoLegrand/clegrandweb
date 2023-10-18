@@ -1,0 +1,12 @@
+en:
+  flag_checkbox_component:
+    git: "Git"
+    git_flag: "--git flag"
+    # explanation of the flag
+    git_description: "This flag is used to do something"
+es:
+  flag_checkbox_component:
+    git: "Git"
+    git_flag: "--git flag"
+    # explanation of the flag
+    git_description: "This flag is used to do something"
