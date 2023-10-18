@@ -1,0 +1,25 @@
+default: &default
+  host: <%= Figaro.env.host_db %>
+  user: <%= Figaro.env.user_db %>
+  password: <%= Figaro.env.password_db %>
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: clegrandweb_development
+
+test:
+  <<: *default
+  database: clegrandweb_test
+
+staging:
+  <<: *default
+  database: clegrandweb_staging
+
+production:
+  <<: *default
+  database: clegrandweb_production
