@@ -11,7 +11,12 @@ export default class extends Controller {
   updateOutput() {
     const appName = this.getAppName();
     const command = this.getPresetsCommand();
-    this.outputTarget.innerText = `rails new ${appName} ${command}`;
+    this.outputTarget.innerHTML = `
+      <span class='text-green-400'>$ </span>
+      <span class='text-blue-400'>rails new</span> 
+      <span class='text-red-400'>${appName} </span>
+      <span class='text-yellow-700'> ${command}</span>
+    ` 
   }
 
   getAppName() {

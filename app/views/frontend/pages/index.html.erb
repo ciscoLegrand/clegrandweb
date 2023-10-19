@@ -12,10 +12,22 @@
                        },
                        type: 'text',
                        class: 'w-full'%>
-    <div data-flag-command-target="output" class="w-full p-8 text-slate-200">
-      rail new --skip-gitignore --skip-keeps --skip-action-mailbox --skip-action-text --skip-active-storage --skip-action-cable --skip-spring --skip-listen --skip-javascript --skip-turbolinks --skip-bootsnap --skip-webpack-install
+
+    
+  </div>
+
+<div class="bg-black text-white rounded-lg font-mono" data-controller="clipboard">
+  <div class="bg-gray-800 p-2 rounded-t-lg flex items-center justify-between">
+    <button data-clipboard-target="button" data-action="click->clipboard#copyToClipboard">📋 Copiar</button>
+    <div class="flex space-x-2">
+      <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+      <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+      <div class="w-3 h-3 bg-green-500 rounded-full"></div>
     </div>
   </div>
+  <div data-flag-command-target="output"  data-clipboard-target="source" class="p-8 text-lg"></div>
+</div>
+
 
   <!-- SECCION DONDE RENDERIZAR CON ESTILOS BASH EL COMANDO CON FLAGS -->
   <h2 class="w-full flex justify-center items-center text-4xl font-bold text-slate-200 py-4">Use Rails preset?</h2>
