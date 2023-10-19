@@ -1,19 +1,19 @@
 <div class="flex items-center gap-8 px-6 py-3 hover:bg-slate-600 hover:cursor-pointer">
     <input id="bordered-checkbox-<%= flag %>" 
-           type="checkbox" 
-           value="--skip-<%= flag %>" 
-           name="bordered-checkbox" 
-           data-action="flags#updateCommand" 
-           data-flags-target="checkbox" 
+           type=<%= type %>
+           value="<%= flag %>"
+           name="bordered-checkbox"
+           data-action="change->flag-command#updateOutput"
+           data-flag-command-target=<%= type %> 
            class="w-6 h-6 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 hover:cursor-pointer" 
            <%= "checked" if checked %> />
     <label for="bordered-checkbox-<%= flag %>" 
            class="w-full py-4 ml-2 text-sm font-medium text-slate-200 dark:text-gray-300 hover:cursor-pointer">
            <div class="text-xl text-slate-200 py-3">
-            <%= t(".#{flag}") %>
+            <%= t(".flag_command_component.#{flag}") %>
            </div>
           <div class="text-sm text-slate-200 dark:text-gray-300">
-            <%= t(".#{flag}_description") %>
+            <%= t(".flag_command_component.#{flag}_description") %>
           </div>
     </label>
 </div>

@@ -1,0 +1,19 @@
+en:
+  flag_command_component:
+    none: "None"
+    none_description: "Not using preset"
+    api: "API mode"
+    api_description: "Choose this if you plan to use the Rails app as API only"
+    minimal: "Minimal mode"
+    minimal_description: "This will skip all Active-* gems, bootsnap, builder, spring, system_tests, turbo etc"
+
+es:
+  flag_command_component:
+    none: "Ninguno"
+    none_description: "No usar preset"
+    api: "Modo API"
+    api_description: "Elige esto si planeas usar la aplicación Rails solo como API"
+    minimal: "Modo mínimo"
+    minimal_description: "Esto omitirá todas las gemas Active-*, bootsnap, builder, spring, system_tests, turbo, etc."
+    
+
