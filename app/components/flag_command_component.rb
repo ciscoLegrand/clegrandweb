@@ -1,12 +1,14 @@
 # frozen_string_literal: true
 
 class FlagCommandComponent < ViewComponent::Base
-  attr_accessor :flag, :type, :checked
+  attr_accessor :flag, :type, :checked, :target, :icon
 
-  def initialize(flag:, type:, checked:)
+  def initialize(flag:, type:, **options)
     super
     @flag = flag
     @type = type
-    @checked = checked
+    @checked = options[:checked].presence || false
+    @target = options[:target]
+    @icon = options[:icon]
   end
 end

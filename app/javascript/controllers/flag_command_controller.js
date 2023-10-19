@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["input", "output", "radio"]
+  static targets = ["input", "output", "preset", "database", "housekeeping", "pipeline","javascript", "css", "goodies", "tests"]
 
   connect() {
     console.log("FlagCommandController connected!")
@@ -10,12 +10,28 @@ export default class extends Controller {
 
   updateOutput() {
     const appName = this.getAppName();
-    const command = this.getPresetsCommand();
+    const presetCommand = this.getPresetCommand();
+    const databaseCommand = this.getDatabaseCommand();
+    const housekeepingCommand = this.getHousekeepingCommand();
+    const pipelineCommand = this.getPipelineCommand();
+    const javascriptCommand = this.getJavascriptCommand();
+    const cssCommand = this.getCssCommand();
+    const activeCommand = this.getActiveCommand();
+    const testCommand = this.getTestCommand();
     this.outputTarget.innerHTML = `
       <span class='text-green-400'>$ </span>
       <span class='text-blue-400'>rails new</span> 
       <span class='text-red-400'>${appName} </span>
-      <span class='text-yellow-700'> ${command}</span>
+      <span class='text-yellow-700'>
+        ${presetCommand}
+        ${databaseCommand}
+        ${housekeepingCommand}
+        ${pipelineCommand}
+        ${javascriptCommand}
+        ${cssCommand}
+        ${activeCommand}
+        ${testCommand}
+      </span>
     ` 
   }
 
@@ -23,30 +39,80 @@ export default class extends Controller {
     return this.inputTarget.value;
   }
 
-  getPresetsCommand() {
-    let command;
-    const selectedFlag = this.getSelectedFlag();
-    console.log('selectedFlag: ', selectedFlag  )
-    switch (selectedFlag) {
-      case 'none':
-        command = "--database=sqlite3 --skip-git --skip-keeps --skip-bootsnap --skip-bundle --skip-asset-pipeline --skip-javascript --skip-action-cable --skip-active-job --skip-action-mailbox --skip-action-mailer --skip-active-record --skip-active-storage --skip-action-text --skip-hotwire --skip-jbuilder --skip-test --skip-system-test";
-        break;
-      case 'api':
-        command = "--api --database=sqlite3 --skip-git --skip-keeps --skip-bootsnap --skip-bundle --skip-asset-pipeline --skip-javascript --skip-action-cable --skip-active-job --skip-action-mailbox --skip-action-mailer --skip-active-record --skip-active-storage --skip-action-text --skip-hotwire --skip-jbuilder --skip-test --skip-system-test";
-        break;
-      case 'minimal':
-        command = "--minimal --database=sqlite3 --skip-git --skip-keeps --skip-bootsnap --skip-bundle --skip-asset-pipeline --skip-javascript --skip-action-cable --skip-active-job --skip-action-mailbox --skip-action-mailer --skip-active-record --skip-active-storage --skip-action-text --skip-hotwire --skip-jbuilder --skip-test --skip-system-test";
-        break;
-      default:
-        command = "";
-    }
-    return command;
+  getPresetCommand() {
+    const selectedPreset = this.presetTargets.find(radio => radio.checked);
+    console.log(selectedPreset.value)
+    if (selectedPreset.value === 'preset_none') { return '' }
+    return `--${selectedPreset.value}`
   }
 
-  getSelectedFlag() {
-    console.log('radioTargets: ', this.radioTargets);  // Agrega esta línea
-    const selectedRadio = this.radioTargets.find(radio => radio.checked);
-    console.log('selectedRadio: ', selectedRadio);
-    return selectedRadio ? selectedRadio.value : '';
+  getDatabaseCommand() {
+    const selectedDatabase = this.databaseTargets.find(radio => radio.checked);
+    return selectedDatabase ? `--database=${selectedDatabase.value}` : '';
+  }
+
+  getHousekeepingCommand() {
+    console.log("Housekeeping targets:", this.housekeepingTargets);
+    const defaultSkips = ['gitignore', 'keeps', 'bootsnap', 'bundle'];
+    const checkedFlags = this.housekeepingTargets.filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
+  
+    console.log("Checked flags:", checkedFlags);
+    const skipCommands = defaultSkips
+      .filter(flag => !checkedFlags.includes(flag))
+      .map(flag => `--skip-${flag}`)
+      .join(' ');
+  
+    console.log("Skip commands:", skipCommands);
+    return skipCommands === '' ? '' : (skipCommands || '--skip-gitignore --skip-keeps --skip-bootsnap --skip-bundle');
+
+  }
+
+  getPipelineCommand() {
+    const selectedPipeline = this.pipelineTargets.find(radio => radio.checked);
+    if (selectedPipeline.value === 'pipeline_none') { return '--skip-asset-pipeline' }
+    if (selectedPipeline.value === 'propshaft') { return '--asset-pipeline=propshaft' }
+    return ''
+  }
+
+  getJavascriptCommand() {
+    const selectedJS = this.javascriptTargets.find(radio => radio.checked);
+    if(selectedJS.value === 'javascript_none') { return '--skip-javascript' }
+    return selectedJS ? `--javascript=${selectedJS.value}` : '';
+  }
+
+  getCssCommand() {
+    const selectedCss = this.cssTargets.find(radio => radio.checked);
+    if (selectedCss.value === 'css_none') { return '' }
+    return `--css=${selectedCss.value}`
+  }
+
+  getActiveCommand() {
+    console.log("Goodies targets:", this.goodiesTargets);
+    // Tus skips por defecto
+    const defaultSkips = ['cable', 'job', 'mailbox', 'mailer', 'record', 'storage', 'text', 'hotwire', 'jbuilder'];
+    
+    // Obtiene los flags que están seleccionados
+    const checkedFlags = this.goodiesTargets.filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
+    
+    // Filtra los skips por defecto basándose en los flags seleccionados
+    const skipCommands = defaultSkips
+      .filter(flag => !checkedFlags.includes(flag))
+      .map(flag => `--skip-${flag}`)
+      .join(' ');
+  
+    // Retorna la cadena de comandos; si está vacía, retorna una cadena vacía
+    return skipCommands === '' ? '' : skipCommands;
+  }
+
+  getTestCommand() {
+    const defaultSkips = ['test', 'system-test'];
+    const checkedFlags = this.testsTargets.filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
+  
+    const skipCommands = defaultSkips
+      .filter(flag => !checkedFlags.includes(flag))
+      .map(flag => `--skip-${flag}`)
+      .join(' ');
+  
+    return skipCommands;
   }
 }
