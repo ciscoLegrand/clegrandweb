@@ -75,3 +75,4 @@ end
 gem 'figaro'
 
 gem 'view_component'
+gem 'inline_svg'
