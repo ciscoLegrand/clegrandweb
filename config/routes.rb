@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  scope module: :frontend do
-    root "pages#index"
-  end
+  root "pages#index"
+  get 'docker' => 'pages#docker', as: :docker
+  get 'contact' => 'pages#contact', as: :contact
 end

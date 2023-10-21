@@ -8,6 +8,7 @@ module.exports = {
     './app/views/**/*.{erb,haml,html,slim}',
     './app/components/*.{erb,haml,html,slim}',
     './app/components/**/*.{erb,haml,html,slim}',
+    './app/assets/stylesheets/components/**/*.css',
   ],
   theme: {
     extend: {

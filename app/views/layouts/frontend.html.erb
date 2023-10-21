@@ -11,7 +11,8 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="bg-slate-900">
+  <body class="bg-slate-900 text-slate-300">
+    <%= render 'layouts/shared/navbar' %>
     <main class="flex flex-col py-12">
       <%= yield %>
     </main>
