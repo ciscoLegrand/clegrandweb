@@ -1,0 +1,679 @@
+{
+  "command": {
+    "first_level": { "value": "run", "label": "run" },
+    "second_level": [
+      {
+        "value": "add-host",
+        "flag": "--add-host",
+        "description": "Añadir una asignación personalizada de host a IP (host:ip).",
+        "usage": "docker run --add-host host:ip [IMAGE]",
+        "result": "Se añade una asignación personalizada de host a IP."
+      },
+      {
+        "value": "attach",
+        "flag": "-a",
+        "description": "Conectar a STDIN, STDOUT o STDERR.",
+        "usage": "docker run -a [STDIN/STDOUT/STDERR] [IMAGE]",
+        "result": "Se conecta a la entrada/salida estándar especificada."
+      },
+      {
+        "value": "blkio-weight",
+        "flag": "--blkio-weight",
+        "description": "Peso de IO en bloque (peso relativo), entre 10 y 1000, o 0 para desactivar (predeterminado 0).",
+        "usage": "docker run --blkio-weight [VALUE] [IMAGE]",
+        "result": "Se establece el peso de IO en bloque."
+      },
+      {
+        "value": "blkio-weight-device",
+        "flag": "--blkio-weight-device",
+        "description": "Peso de IO en bloque (peso relativo del dispositivo) (predeterminado []).",
+        "usage": "docker run --blkio-weight-device [VALUE] [IMAGE]",
+        "result": "Se establece el peso de IO en bloque para el dispositivo."
+      },
+      {
+        "value": "cap-add",
+        "flag": "--cap-add",
+        "description": "Añadir capacidades de Linux.",
+        "usage": "docker run --cap-add [CAPABILITY] [IMAGE]",
+        "result": "Se añaden capacidades de Linux al contenedor."
+      },
+      {
+        "value": "cap-drop",
+        "flag": "--cap-drop",
+        "description": "Eliminar capacidades de Linux.",
+        "usage": "docker run --cap-drop [CAPABILITY] [IMAGE]",
+        "result": "Se eliminan capacidades de Linux del contenedor."
+      },
+      {
+        "value": "cgroup-parent",
+        "flag": "--cgroup-parent",
+        "description": "Cgroup padre opcional para el contenedor.",
+        "usage": "docker run --cgroup-parent [STRING] [IMAGE]",
+        "result": "Se establece el cgroup padre para el contenedor."
+      },
+      {
+        "value": "cgroupns",
+        "flag": "--cgroupns",
+        "description": "Espacio de nombres cgroup a utilizar (host|private). 'host': Ejecutar el contenedor en el espacio de nombres cgroup del host de Docker. 'private': Ejecutar el contenedor en su propio espacio de nombres cgroup privado. '': Utilizar el espacio de nombres cgroup configurado por la opción default-cgroupns-mode en el daemon (predeterminado).",
+        "usage": "docker run --cgroupns [OPTION] [IMAGE]",
+        "result": "Se establece el espacio de nombres cgroup para el contenedor."
+      },
+      {
+        "value": "cidfile",
+        "flag": "--cidfile",
+        "description": "Escribir el ID del contenedor en el archivo.",
+        "usage": "docker run --cidfile [FILENAME] [IMAGE]",
+        "result": "Se escribe el ID del contenedor en el archivo especificado."
+      },
+      {
+        "value": "cpu-period",
+        "flag": "--cpu-period",
+        "description": "Limitar el período CFS de la CPU (Completely Fair Scheduler).",
+        "usage": "docker run --cpu-period [INT] [IMAGE]",
+        "result": "Se establece el período CFS de la CPU."
+      },
+      {
+        "value": "cpu-quota",
+        "flag": "--cpu-quota",
+        "description": "Limitar la cuota CFS de la CPU (Completely Fair Scheduler).",
+        "usage": "docker run --cpu-quota [INT] [IMAGE]",
+        "result": "Se establece la cuota CFS de la CPU."
+      },
+      {
+        "value": "cpu-rt-period",
+        "flag": "--cpu-rt-period",
+        "description": "Limitar el período de tiempo real de la CPU en microsegundos.",
+        "usage": "docker run --cpu-rt-period [INT] [IMAGE]",
+        "result": "Se establece el período de tiempo real de la CPU."
+      },
+      {
+        "value": "cpu-rt-runtime",
+        "flag": "--cpu-rt-runtime",
+        "description": "Limitar el tiempo de ejecución de tiempo real de la CPU en microsegundos.",
+        "usage": "docker run --cpu-rt-runtime [INT] [IMAGE]",
+        "result": "Se establece el tiempo de ejecución de tiempo real de la CPU."
+      },
+      {
+        "value": "cpu-shares",
+        "flag": "-c",
+        "description": "Acciones de CPU (peso relativo).",
+        "usage": "docker run -c [INT] [IMAGE]",
+        "result": "Se establecen las acciones de CPU."
+      },
+      {
+        "value": "cpus",
+        "flag": "--cpus",
+        "description": "Número de CPUs.",
+        "usage": "docker run --cpus [DECIMAL] [IMAGE]",
+        "result": "Se establece el número de CPUs para el contenedor."
+      },
+      {
+        "value": "cpuset-cpus",
+        "flag": "--cpuset-cpus",
+        "description": "CPUs en las que permitir la ejecución (0-3, 0,1).",
+        "usage": "docker run --cpuset-cpus [STRING] [IMAGE]",
+        "result": "Se establece el conjunto de CPUs para la ejecución del contenedor."
+      },
+      {
+        "value": "cpuset-mems",
+        "flag": "--cpuset-mems",
+        "description": "MEMs en las que permitir la ejecución (0-3, 0,1).",
+        "usage": "docker run --cpuset-mems [STRING] [IMAGE]",
+        "result": "Se establece el conjunto de MEMs para la ejecución del contenedor."
+      },
+      {
+        "value": "detach",
+        "flag": "-d",
+        "description": "Ejecutar el contenedor en segundo plano y imprimir el ID del contenedor.",
+        "usage": "docker run --detach [IMAGE]",
+        "result": "Se inicia un contenedor en segundo plano."
+      },
+      {
+        "value": "detach-keys",
+        "flag": "--detach-keys",
+        "description": "Sobrescribir la secuencia de teclas para desprender un contenedor.",
+        "usage": "docker run --detach-keys [STRING] [IMAGE]",
+        "result": "Se establece la secuencia de teclas para desprender el contenedor."
+      },
+      {
+        "value": "device",
+        "flag": "--device",
+        "description": "Añadir un dispositivo del host al contenedor.",
+        "usage": "docker run --device [DEVICE] [IMAGE]",
+        "result": "Se añade un dispositivo del host al contenedor."
+      },
+      {
+        "value": "device-cgroup-rule",
+        "flag": "--device-cgroup-rule",
+        "description": "Añadir una regla a la lista de dispositivos permitidos del cgroup.",
+        "usage": "docker run --device-cgroup-rule [RULE] [IMAGE]",
+        "result": "Se añade una regla a la lista de dispositivos permitidos del cgroup."
+      },
+      {
+        "value": "device-read-bps",
+        "flag": "--device-read-bps",
+        "description": "Limitar la tasa de lectura (bytes por segundo) de un dispositivo (predeterminado []).",
+        "usage": "docker run --device-read-bps [VALUE] [IMAGE]",
+        "result": "Se establece la limitación de la tasa de lectura del dispositivo."
+      },
+      {
+        "value": "device-read-iops",
+        "flag": "--device-read-iops",
+        "description": "Limitar la tasa de lectura (IO por segundo) de un dispositivo (predeterminado []).",
+        "usage": "docker run --device-read-iops [VALUE] [IMAGE]",
+        "result": "Se establece la limitación de la tasa de lectura IO del dispositivo."
+      },
+      {
+        "value": "device-write-bps",
+        "flag": "--device-write-bps",
+        "description": "Limitar la tasa de escritura (bytes por segundo) a un dispositivo (predeterminado []).",
+        "usage": "docker run --device-write-bps [VALUE] [IMAGE]",
+        "result": "Se establece la limitación de la tasa de escritura del dispositivo."
+      },
+      {
+        "value": "device-write-iops",
+        "flag": "--device-write-iops",
+        "description": "Limitar la tasa de escritura (IO por segundo) a un dispositivo (predeterminado []).",
+        "usage": "docker run --device-write-iops [VALUE] [IMAGE]",
+        "result": "Se establece la limitación de la tasa de escritura IO del dispositivo."
+      },
+      {
+        "value": "disable-content-trust",
+        "flag": "--disable-content-trust",
+        "description": "Omitir la verificación de la imagen (predeterminado true).",
+        "usage": "docker run --disable-content-trust [IMAGE]",
+        "result": "Se omite la verificación de la imagen."
+      },
+      {
+        "value": "dns",
+        "flag": "--dns",
+        "description": "Establecer servidores DNS personalizados.",
+        "usage": "docker run --dns [DNS_SERVER] [IMAGE]",
+        "result": "Se establecen servidores DNS personalizados."
+      },
+      {
+        "value": "dns-option",
+        "flag": "--dns-option",
+        "description": "Establecer opciones DNS.",
+        "usage": "docker run --dns-option [OPTION] [IMAGE]",
+        "result": "Se establecen opciones DNS."
+      },
+      {
+        "value": "dns-search",
+        "flag": "--dns-search",
+        "description": "Establecer dominios de búsqueda DNS personalizados.",
+        "usage": "docker run --dns-search [DOMAIN] [IMAGE]",
+        "result": "Se establecen dominios de búsqueda DNS personalizados."
+      },
+      {
+        "value": "domainname",
+        "flag": "--domainname",
+        "description": "Nombre de dominio NIS del contenedor.",
+        "usage": "docker run --domainname [DOMAINNAME] [IMAGE]",
+        "result": "Se establece el nombre de dominio NIS del contenedor."
+      },
+      {
+        "value": "entrypoint",
+        "flag": "--entrypoint",
+        "description": "Sobrescribir el ENTRYPOINT predeterminado de la imagen.",
+        "usage": "docker run --entrypoint [ENTRYPOINT] [IMAGE]",
+        "result": "Se sobrescribe el ENTRYPOINT predeterminado de la imagen."
+      },
+      {
+        "value": "env",
+        "flag": "-e",
+        "description": "Establecer variables de entorno.",
+        "usage": "docker run -e [ENV_VAR] [IMAGE]",
+        "result": "Se establecen variables de entorno."
+      },
+      {
+        "value": "env-file",
+        "flag": "--env-file",
+        "description": "Leer un archivo de variables de entorno.",
+        "usage": "docker run --env-file [FILENAME] [IMAGE]",
+        "result": "Se leen y establecen variables de entorno desde un archivo."
+      },
+      {
+        "value": "expose",
+        "flag": "--expose",
+        "description": "Exponer un puerto o un rango de puertos.",
+        "usage": "docker run --expose [PORT/RANGE] [IMAGE]",
+        "result": "Se expone el puerto o rango de puertos especificado."
+      },
+      {
+        "value": "gpus",
+        "flag": "--gpus",
+        "description": "Añadir dispositivos GPU al contenedor ('all' para pasar todas las GPUs).",
+        "usage": "docker run --gpus [GPU_REQUEST] [IMAGE]",
+        "result": "Se añaden dispositivos GPU al contenedor."
+      },
+      {
+        "value": "group-add",
+        "flag": "--group-add",
+        "description": "Añadir grupos adicionales a los que unirse.",
+        "usage": "docker run --group-add [GROUP] [IMAGE]",
+        "result": "Se añaden grupos adicionales."
+      },
+      {
+        "value": "health-cmd",
+        "flag": "--health-cmd",
+        "description": "Comando para ejecutar para verificar la salud.",
+        "usage": "docker run --health-cmd [COMMAND] [IMAGE]",
+        "result": "Se establece el comando para verificar la salud."
+      },
+      {
+        "value": "health-interval",
+        "flag": "--health-interval",
+        "description": "Tiempo entre la ejecución del chequeo (ms|s|m|h) (predeterminado 0s).",
+        "usage": "docker run --health-interval [DURATION] [IMAGE]",
+        "result": "Se establece el intervalo de salud."
+      },
+      {
+        "value": "health-retries",
+        "flag": "--health-retries",
+        "description": "Fallos consecutivos necesarios para reportar como no saludable.",
+        "usage": "docker run --health-retries [INT] [IMAGE]",
+        "result": "Se establece el número de reintentos de salud."
+      },
+      {
+        "value": "health-start-period",
+        "flag": "--health-start-period",
+        "description": "Periodo de inicio para que el contenedor se inicialice antes de comenzar la cuenta regresiva de reintentos de salud (ms|s|m|h) (predeterminado 0s).",
+        "usage": "docker run --health-start-period [DURATION] [IMAGE]",
+        "result": "Se establece el periodo de inicio de salud."
+      },
+      {
+        "value": "health-timeout",
+        "flag": "--health-timeout",
+        "description": "Tiempo máximo para permitir una verificación de salud para ejecutarse (ms|s|m|h) (predeterminado 0s).",
+        "usage": "docker run --health-timeout [DURATION] [IMAGE]",
+        "result": "Se establece el tiempo de espera de salud."
+      },
+      {
+        "value": "help",
+        "flag": "--help",
+        "description": "Mostrar uso.",
+        "usage": "docker run --help",
+        "result": "Se muestra la ayuda del comando."
+      },
+      {
+        "value": "hostname",
+        "flag": "-h",
+        "description": "Nombre de host del contenedor.",
+        "usage": "docker run -h [HOSTNAME] [IMAGE]",
+        "result": "Se establece el nombre de host del contenedor."
+      },
+      {
+        "value": "init",
+        "flag": "--init",
+        "description": "Ejecutar un init dentro del contenedor que reenvía señales y recoge procesos.",
+        "usage": "docker run --init [IMAGE]",
+        "result": "Se ejecuta un init dentro del contenedor."
+      },
+      {
+        "value": "interactive",
+        "flag": "-i",
+        "description": "Mantener STDIN abierto incluso si no está adjunto.",
+        "usage": "docker run -i [IMAGE]",
+        "result": "Se mantiene STDIN abierto."
+      },
+      {
+        "value": "ip",
+        "flag": "--ip",
+        "description": "Dirección IPv4 (e.g., 172.30.100.104).",
+        "usage": "docker run --ip [IP_ADDRESS] [IMAGE]",
+        "result": "Se establece la dirección IPv4."
+      },
+      {
+        "value": "ip6",
+        "flag": "--ip6",
+        "description": "Dirección IPv6 (e.g., 2001:db8::33).",
+        "usage": "docker run --ip6 [IP_ADDRESS] [IMAGE]",
+        "result": "Se establece la dirección IPv6."
+      },
+      {
+        "value": "ipc",
+        "flag": "--ipc",
+        "description": "Modo IPC a utilizar.",
+        "usage": "docker run --ipc [MODE] [IMAGE]",
+        "result": "Se establece el modo IPC."
+      },
+      {
+        "value": "isolation",
+        "flag": "--isolation",
+        "description": "Tecnología de aislamiento del contenedor.",
+        "usage": "docker run --isolation [TECHNOLOGY] [IMAGE]",
+        "result": "Se establece la tecnología de aislamiento del contenedor."
+      },
+      {
+        "value": "kernel-memory",
+        "flag": "--kernel-memory",
+        "description": "Límite de memoria del kernel.",
+        "usage": "docker run --kernel-memory [BYTES] [IMAGE]",
+        "result": "Se establece el límite de memoria del kernel."
+      },
+      {
+        "value": "label",
+        "flag": "-l",
+        "description": "Establecer metadatos en un contenedor.",
+        "usage": "docker run -l [LABEL] [IMAGE]",
+        "result": "Se establecen metadatos en el contenedor."
+      },
+      {
+        "value": "label-file",
+        "flag": "--label-file",
+        "description": "Leer un archivo delimitado por líneas de etiquetas.",
+        "usage": "docker run --label-file [FILENAME] [IMAGE]",
+        "result": "Se leen y establecen etiquetas desde un archivo."
+      },
+      {
+        "value": "link",
+        "flag": "--link",
+        "description": "Añadir enlace a otro contenedor.",
+        "usage": "docker run --link [CONTAINER_NAME:ALIAS] [IMAGE]",
+        "result": "Se añade un enlace a otro contenedor."
+      },
+      {
+        "value": "link-local-ip",
+        "flag": "--link-local-ip",
+        "description": "Direcciones IPv4/IPv6 link-local del contenedor.",
+        "usage": "docker run --link-local-ip [IP_ADDRESS] [IMAGE]",
+        "result": "Se establecen las direcciones link-local del contenedor."
+      },
+      {
+        "value": "log-driver",
+        "flag": "--log-driver",
+        "description": "Controlador de registro para el contenedor.",
+        "usage": "docker run --log-driver [DRIVER] [IMAGE]",
+        "result": "Se establece el controlador de registro."
+      },
+      {
+        "value": "log-opt",
+        "flag": "--log-opt",
+        "description": "Opciones del controlador de registro.",
+        "usage": "docker run --log-opt [OPTION] [IMAGE]",
+        "result": "Se establecen opciones del controlador de registro."
+      },
+      {
+        "value": "mac-address",
+        "flag": "--mac-address",
+        "description": "Dirección MAC del contenedor (e.g., 92:d0:c6:0a:29:33).",
+        "usage": "docker run --mac-address [MAC_ADDRESS] [IMAGE]",
+        "result": "Se establece la dirección MAC del contenedor."
+      },
+      {
+        "value": "memory",
+        "flag": "-m",
+        "description": "Límite de memoria.",
+        "usage": "docker run -m [BYTES] [IMAGE]",
+        "result": "Se establece el límite de memoria."
+      },
+      {
+        "value": "memory-reservation",
+        "flag": "--memory-reservation",
+        "description": "Reserva de memoria suave.",
+        "usage": "docker run --memory-reservation [BYTES] [IMAGE]",
+        "result": "Se establece la reserva de memoria suave."
+      },
+      {
+        "value": "memory-swap",
+        "flag": "--memory-swap",
+        "description": "Límite de intercambio igual a la memoria más el intercambio: '-1' para habilitar intercambio ilimitado.",
+        "usage": "docker run --memory-swap [BYTES] [IMAGE]",
+        "result": "Se establece el límite de intercambio."
+      },
+      {
+        "value": "memory-swappiness",
+        "flag": "--memory-swappiness",
+        "description": "Ajustar la swappiness de memoria del contenedor (0 a 100) (predeterminado -1).",
+        "usage": "docker run --memory-swappiness [INT] [IMAGE]",
+        "result": "Se establece la swappiness de memoria."
+      },
+      {
+        "value": "mount",
+        "flag": "--mount",
+        "description": "Adjuntar un montaje de sistema de archivos al contenedor.",
+        "usage": "docker run --mount [MOUNT] [IMAGE]",
+        "result": "Se adjunta un montaje de sistema de archivos."
+      },
+      {
+        "value": "name",
+        "flag": "--name",
+        "description": "Asignar un nombre al contenedor.",
+        "usage": "docker run --name [NAME] [IMAGE]",
+        "result": "Se inicia un contenedor con un nombre específico."
+      },
+      {
+        "value": "network",
+        "flag": "--network",
+        "description": "Conectar un contenedor a una red.",
+        "usage": "docker run --network [NETWORK] [IMAGE]",
+        "result": "Se conecta el contenedor a una red."
+      },
+      {
+        "value": "network-alias",
+        "flag": "--network-alias",
+        "description": "Añadir alias de red con ámbito de red para el contenedor.",
+        "usage": "docker run --network-alias [ALIAS] [IMAGE]",
+        "result": "Se añade un alias de red."
+      },
+      {
+        "value": "no-healthcheck",
+        "flag": "--no-healthcheck",
+        "description": "Deshabilitar cualquier HEALTHCHECK especificado por el contenedor.",
+        "usage": "docker run --no-healthcheck [IMAGE]",
+        "result": "Se deshabilita el HEALTHCHECK."
+      },
+      {
+        "value": "oom-kill-disable",
+        "flag": "--oom-kill-disable",
+        "description": "Deshabilitar OOM Killer.",
+        "usage": "docker run --oom-kill-disable [IMAGE]",
+        "result": "Se deshabilita el OOM Killer."
+      },
+      {
+        "value": "oom-score-adj",
+        "flag": "--oom-score-adj",
+        "description": "Ajustar las preferencias OOM del host (-1000 a 1000).",
+        "usage": "docker run --oom-score-adj [INT] [IMAGE]",
+        "result": "Se ajustan las preferencias OOM."
+      },
+      {
+        "value": "pid",
+        "flag": "--pid",
+        "description": "Espacio de nombres PID a utilizar.",
+        "usage": "docker run --pid [MODE] [IMAGE]",
+        "result": "Se establece el espacio de nombres PID."
+      },
+      {
+        "value": "pids-limit",
+        "flag": "--pids-limit",
+        "description": "Ajustar el límite de pids del contenedor (establecer -1 para ilimitado).",
+        "usage": "docker run --pids-limit [INT] [IMAGE]",
+        "result": "Se establece el límite de pids."
+      },
+      {
+        "value": "platform",
+        "flag": "--platform",
+        "description": "Establecer plataforma si el servidor es capaz de multi-plataforma.",
+        "usage": "docker run --platform [PLATFORM] [IMAGE]",
+        "result": "Se establece la plataforma."
+      },
+      {
+        "value": "privileged",
+        "flag": "--privileged",
+        "description": "Dar privilegios extendidos a este contenedor.",
+        "usage": "docker run --privileged [IMAGE]",
+        "result": "Se establecen privilegios extendidos."
+      },
+      {
+        "value": "publish",
+        "flag": "-p",
+        "description": "Publicar un puerto(s) del contenedor al host.",
+        "usage": "docker run --publish [HOST_PORT]:[CONTAINER_PORT] [IMAGE]",
+        "result": "Se publica un puerto del contenedor."
+      },
+      {
+        "value": "publish-all",
+        "flag": "-P",
+        "description": "Publicar todos los puertos expuestos a puertos aleatorios.",
+        "usage": "docker run --publish-all [IMAGE]",
+        "result": "Se publican todos los puertos expuestos."
+      },
+      {
+        "value": "pull",
+        "flag": "--pull",
+        "description": "Tirar de la imagen antes de ejecutar (\"always\"|\"missing\"|\"never\") (predeterminado \"missing\").",
+        "usage": "docker run --pull [PULL_POLICY] [IMAGE]",
+        "result": "Se establece la política de extracción."
+      },
+      {
+        "value": "read-only",
+        "flag": "--read-only",
+        "description": "Montar el sistema de archivos raíz del contenedor como sólo lectura.",
+        "usage": "docker run --read-only [IMAGE]",
+        "result": "Se monta el sistema de archivos raíz como sólo lectura."
+      },
+      {
+        "value": "restart",
+        "flag": "--restart",
+        "description": "Política de reinicio a aplicar cuando un contenedor sale (predeterminado \"no\").",
+        "usage": "docker run --restart [POLICY] [IMAGE]",
+        "result": "Se establece la política de reinicio."
+      },
+      {
+        "value": "rm",
+        "flag": "--rm",
+        "description": "Eliminar automáticamente el contenedor cuando salga.",
+        "usage": "docker run --rm [IMAGE]",
+        "result": "Se elimina el contenedor al salir."
+      },
+      {
+        "value": "runtime",
+        "flag": "--runtime",
+        "description": "Tiempo de ejecución a utilizar para este contenedor.",
+        "usage": "docker run --runtime [RUNTIME] [IMAGE]",
+        "result": "Se establece el tiempo de ejecución."
+      },
+      {
+        "value": "security-opt",
+        "flag": "--security-opt",
+        "description": "Opciones de seguridad.",
+        "usage": "docker run --security-opt [OPTION] [IMAGE]",
+        "result": "Se establecen opciones de seguridad."
+      },
+      {
+        "value": "shm-size",
+        "flag": "--shm-size",
+        "description": "Tamaño de /dev/shm.",
+        "usage": "docker run --shm-size [BYTES] [IMAGE]",
+        "result": "Se establece el tamaño de /dev/shm."
+      },
+      {
+        "value": "sig-proxy",
+        "flag": "--sig-proxy",
+        "description": "Proxy señales recibidas al proceso (predeterminado true).",
+        "usage": "docker run --sig-proxy [IMAGE]",
+        "result": "Se establece el proxy de señales."
+      },
+      {
+        "value": "stop-signal",
+        "flag": "--stop-signal",
+        "description": "Señal para detener un contenedor (predeterminado \"15\").",
+        "usage": "docker run --stop-signal [SIGNAL] [IMAGE]",
+        "result": "Se establece la señal de parada."
+      },
+      {
+        "value": "stop-timeout",
+        "flag": "--stop-timeout",
+        "description": "Tiempo de espera (en segundos) para detener un contenedor.",
+        "usage": "docker run --stop-timeout [TIMEOUT] [IMAGE]",
+        "result": "Se establece el tiempo de espera de parada."
+      },
+      {
+        "value": "storage-opt",
+        "flag": "--storage-opt",
+        "description": "Opciones del controlador de almacenamiento para el contenedor.",
+        "usage": "docker run --storage-opt [OPTION] [IMAGE]",
+        "result": "Se establecen opciones del controlador de almacenamiento."
+      },
+      {
+        "value": "sysctl",
+        "flag": "--sysctl",
+        "description": "Opciones sysctl (predeterminado map[]).",
+        "usage": "docker run --sysctl [OPTION] [IMAGE]",
+        "result": "Se establecen opciones sysctl."
+      },
+      {
+        "value": "tmpfs",
+        "flag": "--tmpfs",
+        "description": "Montar un directorio tmpfs.",
+        "usage": "docker run --tmpfs [DIR] [IMAGE]",
+        "result": "Se monta un directorio tmpfs."
+      },
+      {
+        "value": "tty",
+        "flag": "-t",
+        "description": "Asignar un pseudo-TTY.",
+        "usage": "docker run -t [IMAGE]",
+        "result": "Se asigna un pseudo-TTY."
+      },
+      {
+        "value": "ulimit",
+        "flag": "--ulimit",
+        "description": "Opciones de ulimit.",
+        "usage": "docker run --ulimit [OPTION] [IMAGE]",
+        "result": "Se establecen opciones de ulimit."
+      },
+      {
+        "value": "user",
+        "flag": "-u",
+        "description": "Nombre de usuario o UID (formato: <name|uid>[:<group|gid>]).",
+        "usage": "docker run -u [USER] [IMAGE]",
+        "result": "Se establece el usuario."
+      },
+      {
+        "value": "userns",
+        "flag": "--userns",
+        "description": "Espacio de nombres de usuario a utilizar.",
+        "usage": "docker run --userns [MODE] [IMAGE]",
+        "result": "Se establece el espacio de nombres de usuario."
+      },
+      {
+        "value": "uts",
+        "flag": "--uts",
+        "description": "Espacio de nombres UTS a utilizar.",
+        "usage": "docker run --uts [MODE] [IMAGE]",
+        "result": "Se establece el espacio de nombres UTS."
+      },
+      {
+        "value": "volume",
+        "flag": "-v",
+        "description": "Montar un volumen.",
+        "usage": "docker run -v [VOLUME] [IMAGE]",
+        "result": "Se monta un volumen."
+      },
+      {
+        "value": "volume-driver",
+        "flag": "--volume-driver",
+        "description": "Controlador de volumen opcional para el contenedor.",
+        "usage": "docker run --volume-driver [DRIVER] [IMAGE]",
+        "result": "Se establece el controlador de volumen."
+      },
+      {
+        "value": "volumes-from",
+        "flag": "--volumes-from",
+        "description": "Montar volúmenes desde el(los) contenedor(es) especificado(s).",
+        "usage": "docker run --volumes-from [CONTAINER] [IMAGE]",
+        "result": "Se montan volúmenes desde otro(s) contenedor(es)."
+      },
+      {
+        "value": "workdir",
+        "flag": "-w",
+        "description": "Directorio de trabajo dentro del contenedor.",
+        "usage": "docker run -w [DIR] [IMAGE]",
+        "result": "Se establece el directorio de trabajo."
+      }
+    ]
+  }
+}

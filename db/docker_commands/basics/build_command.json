@@ -1,0 +1,210 @@
+{
+  "command": {
+    "first_level": { "value": "build", "label": "build" },
+    "second_level": [
+      {
+        "value": "add-host",
+        "flag": "--add-host",
+        "description": "Agrega una asignación personalizada de host a IP (host:ip). Esto es útil cuando quiero que el contenedor acceda a un host específico a través de una IP específica durante la construcción.",
+        "usage": "docker build --add-host=host:ip .",
+        "result": "El contenedor podrá acceder al host especificado usando la IP proporcionada durante la construcción."
+      },
+      {
+        "value": "build-arg",
+        "flag": "--build-arg",
+        "description": "Establece variables de tiempo de construcción que pueden ser utilizadas en el Dockerfile. Por ejemplo, si quiero pasar una versión específica de una dependencia, puedo usar esta opción.",
+        "usage": "docker build --build-arg VERSION=1.2.3 .",
+        "result": "La variable VERSION estará disponible durante la construcción con el valor 1.2.3."
+      },
+      {
+        "value": "cache-from",
+        "flag": "--cache-from",
+        "description": "Especifica imágenes a considerar como fuentes de caché. Esto es útil para aprovechar las capas de caché de otras imágenes y acelerar el proceso de construcción.",
+        "usage": "docker build --cache-from=my-image:latest .",
+        "result": "Las capas de caché de 'my-image:latest' serán utilizadas si están disponibles."
+      },
+      {
+        "value": "cgroup-parent",
+        "flag": "--cgroup-parent",
+        "description": "Establece un cgroup padre opcional para el contenedor. Esto es útil si quiero controlar y limitar los recursos del contenedor durante la construcción.",
+        "usage": "docker build --cgroup-parent=/mycgroup .",
+        "result": "El contenedor utilizará '/mycgroup' como su cgroup padre durante la construcción."
+      },
+      {
+        "value": "compress",
+        "flag": "--compress",
+        "description": "Comprime el contexto de construcción usando gzip. Esto es útil si quiero reducir el tamaño del contexto de construcción y acelerar la transferencia de datos.",
+        "usage": "docker build --compress .",
+        "result": "El contexto de construcción será comprimido antes de ser enviado al demonio de Docker."
+      },
+      {
+        "value": "cpu-period",
+        "flag": "--cpu-period",
+        "description": "Limita el período CFS (Completely Fair Scheduler) de la CPU. Esto es útil si quiero controlar el tiempo de ejecución de la CPU para el contenedor durante la construcción.",
+        "usage": "docker build --cpu-period=100000 .",
+        "result": "El período CFS de la CPU será limitado a 100000 microsegundos."
+      },
+      {
+        "value": "cpu-quota",
+        "flag": "--cpu-quota",
+        "description": "Limita la cuota CFS (Completely Fair Scheduler) de la CPU. Esto es útil si quiero controlar el uso de la CPU por parte del contenedor durante la construcción.",
+        "usage": "docker build --cpu-quota=50000 .",
+        "result": "La cuota CFS de la CPU será limitada a 50000 microsegundos."
+      },
+      {
+        "value": "cpu-shares",
+        "flag": "-c",
+        "description": "Establece las acciones de CPU (peso relativo). Esto es útil si quiero controlar la prioridad de CPU del contenedor en relación con otros contenedores.",
+        "usage": "docker build -c 512 .",
+        "result": "El contenedor tendrá un peso relativo de 512 en la planificación de la CPU."
+      },
+      {
+        "value": "cpuset-cpus",
+        "flag": "--cpuset-cpus",
+        "description": "Especifica en qué CPUs permitir la ejecución. Esto es útil si quiero restringir el contenedor a un conjunto específico de CPUs durante la construcción.",
+        "usage": "docker build --cpuset-cpus=0,1 .",
+        "result": "El contenedor sólo podrá ejecutarse en las CPUs 0 y 1."
+      },
+      {
+        "value": "cpuset-mems",
+        "flag": "--cpuset-mems",
+        "description": "Especifica en qué MEMs permitir la ejecución. Esto es útil si quiero restringir el contenedor a un conjunto específico de nodos de memoria durante la construcción.",
+        "usage": "docker build --cpuset-mems=0,1 .",
+        "result": "El contenedor sólo podrá ejecutarse en los nodos de memoria 0 y 1."
+      },
+      {
+        "value": "disable-content-trust",
+        "flag": "--disable-content-trust",
+        "description": "Omite la verificación de la imagen (por defecto es true). Esto es útil si confío en las imágenes y quiero evitar la verificación de contenido.",
+        "usage": "docker build --disable-content-trust .",
+        "result": "La verificación de contenido será omitida durante la construcción."
+      },
+      {
+        "value": "file",
+        "flag": "-f",
+        "description": "Especifica el nombre del Dockerfile (por defecto es 'PATH/Dockerfile'). Esto es útil si tengo varios Dockerfiles y quiero especificar cuál usar.",
+        "usage": "docker build -f MyDockerfile .",
+        "result": "Se utilizará 'MyDockerfile' para construir la imagen."
+      },
+      {
+        "value": "force-rm",
+        "flag": "--force-rm",
+        "description": "Siempre elimina los contenedores intermedios. Esto es útil si quiero asegurarme de que todos los contenedores intermedios sean eliminados después de una construcción exitosa o fallida.",
+        "usage": "docker build --force-rm .",
+        "result": "Todos los contenedores intermedios serán eliminados."
+      },
+      {
+        "value": "iidfile",
+        "flag": "--iidfile",
+        "description": "Escribe el ID de la imagen en el archivo especificado. Esto es útil si quiero guardar el ID de la imagen para su uso posterior.",
+        "usage": "docker build --iidfile=image-id.txt .",
+        "result": "El ID de la imagen será guardado en 'image-id.txt'."
+      },
+      {
+        "value": "isolation",
+        "flag": "--isolation",
+        "description": "Establece la tecnología de aislamiento del contenedor. Esto es útil si quiero especificar una tecnología de aislamiento diferente, como hyperv, para la construcción.",
+        "usage": "docker build --isolation=hyperv .",
+        "result": "La tecnología de aislamiento hyperv será utilizada para la construcción."
+      },
+      {
+        "value": "label",
+        "flag": "--label",
+        "description": "Establece metadatos para una imagen. Esto es útil si quiero agregar información adicional a la imagen, como la versión o el autor.",
+        "usage": "docker build --label version=1.0 .",
+        "result": "La imagen tendrá un etiqueta 'version' con el valor '1.0'."
+      },
+      {
+        "value": "memory",
+        "flag": "-m",
+        "description": "Establece el límite de memoria. Esto es útil si quiero restringir la cantidad de memoria que el contenedor puede usar durante la construcción.",
+        "usage": "docker build -m 512m .",
+        "result": "La memoria del contenedor será limitada a 512 megabytes."
+      },
+      {
+        "value": "memory-swap",
+        "flag": "--memory-swap",
+        "description": "Establece el límite de memoria más intercambio: '-1' para habilitar intercambio ilimitado. Esto es útil si quiero controlar el uso del intercambio por parte del contenedor durante la construcción.",
+        "usage": "docker build --memory-swap=-1 .",
+        "result": "El contenedor tendrá intercambio ilimitado."
+      },
+      {
+        "value": "network",
+        "flag": "--network",
+        "description": "Establece el modo de red para las instrucciones RUN durante la construcción. Esto es útil si quiero controlar la red utilizada por el contenedor durante la construcción.",
+        "usage": "docker build --network=host .",
+        "result": "El contenedor utilizará la red del host durante la construcción."
+      },
+      {
+        "value": "no-cache",
+        "flag": "--no-cache",
+        "description": "No utiliza caché al construir la imagen. Esto es útil si quiero asegurarme de que todas las capas se construyan desde cero.",
+        "usage": "docker build --no-cache .",
+        "result": "Todas las capas serán construidas desde cero sin utilizar caché."
+      },
+      {
+        "value": "pull",
+        "flag": "--pull",
+        "description": "Siempre intenta descargar una versión más reciente de la imagen. Esto es útil si quiero asegurarme de que esté utilizando la versión más reciente de una imagen base.",
+        "usage": "docker build --pull .",
+        "result": "Se intentará descargar la versión más reciente de la imagen base."
+      },
+      {
+        "value": "quiet",
+        "flag": "-q",
+        "description": "Suprime la salida de construcción y muestra el ID de la imagen en caso de éxito. Esto es útil si quiero una salida mínima durante la construcción.",
+        "usage": "docker build -q .",
+        "result": "La salida de construcción será suprimida y sólo se mostrará el ID de la imagen en caso de éxito."
+      },
+      {
+        "value": "rm",
+        "flag": "--rm",
+        "description": "Elimina los contenedores intermedios después de una construcción exitosa. Esto es útil si quiero mantener limpio el sistema y eliminar los contenedores intermedios que ya no son necesarios.",
+        "usage": "docker build --rm .",
+        "result": "Todos los contenedores intermedios serán eliminados después de una construcción exitosa."
+      },
+      {
+        "value": "security-opt",
+        "flag": "--security-opt",
+        "description": "Establece opciones de seguridad. Esto es útil si quiero controlar las características de seguridad del contenedor durante la construcción.",
+        "usage": "docker build --security-opt seccomp=unconfined .",
+        "result": "La política de seccomp será 'unconfined' durante la construcción."
+      },
+      {
+        "value": "shm-size",
+        "flag": "--shm-size",
+        "description": "Establece el tamaño de /dev/shm. Esto es útil si quiero controlar el tamaño de la memoria compartida que el contenedor puede usar.",
+        "usage": "docker build --shm-size=1g .",
+        "result": "El tamaño de /dev/shm será de 1 gigabyte."
+      },
+      {
+        "value": "squash",
+        "flag": "--squash",
+        "description": "Combina las nuevas capas construidas en una sola nueva capa. Esto es útil si quiero reducir el número de capas y el tamaño de la imagen.",
+        "usage": "docker build --squash .",
+        "result": "Todas las nuevas capas serán combinadas en una sola nueva capa."
+      },
+      {
+        "value": "tag",
+        "flag": "-t",
+        "description": "Establece el nombre y opcionalmente una etiqueta en el formato 'nombre:etiqueta'. Esto es útil si quiero nombrar y etiquetar la imagen que estoy construyendo.",
+        "usage": "docker build -t my-image:latest .",
+        "result": "Se construirá una imagen con el nombre 'my-image' y la etiqueta 'latest'."
+      },
+      {
+        "value": "target",
+        "flag": "--target",
+        "description": "Establece la etapa de construcción objetivo a construir. Esto es útil si tengo múltiples etapas en mi Dockerfile y quiero construir sólo una específica.",
+        "usage": "docker build --target=builder .",
+        "result": "Sólo se construirá la etapa 'builder' del Dockerfile."
+      },
+      {
+        "value": "ulimit",
+        "flag": "--ulimit",
+        "description": "Establece las opciones de ulimit. Esto es útil si quiero controlar los límites de recursos del contenedor durante la construcción.",
+        "usage": "docker build --ulimit nofile=1024:2048 .",
+        "result": "El contenedor tendrá un límite de 1024 archivos abiertos y un máximo de 2048."
+      }
+    ]
+  }
+}
