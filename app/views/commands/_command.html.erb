@@ -1,0 +1,48 @@
+<div id="<%= dom_id command %>" class="w-full grid grid-cols-9 gap-4 border p-3">
+  <div class="my-5">
+    <strong class="block font-medium mb-1">Tech:</strong>
+    <%= command.tech %>
+  </div>
+
+  <div class="my-5">
+    <strong class="block font-medium mb-1">Command:</strong>
+    <%= command.command %>
+  </div>
+
+  <div class="my-5">
+    <strong class="block font-medium mb-1">Flag:</strong>
+    <%= command.flag %>
+  </div>
+
+  <div class="my-5">
+    <strong class="block font-medium mb-1">Flag long:</strong>
+    <%= command.flag_long %>
+  </div>
+
+  <div class="my-5">
+    <strong class="block font-medium mb-1">Flag short:</strong>
+    <%= command.flag_short %>
+  </div>
+
+  <div class="my-5">
+    <strong class="block font-medium mb-1">Description:</strong>
+    <%= command.description %>
+  </div>
+
+  <div class="my-5">
+    <strong class="block font-medium mb-1">Result:</strong>
+    <%= command.result %>
+  </div>
+
+  <div class="my-5">
+    <strong class="block font-medium mb-1">Usage:</strong>
+    <%= command.usage %>
+  </div>
+
+  <% if action_name != "show" %>
+  <div class="flex justify-end items-center gap-4">
+    <%= link_to "Show this command", command, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Edit this command", edit_command_path(command), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+  </div>
+  <% end %>
+</div>
