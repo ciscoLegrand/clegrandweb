@@ -1,4 +1,4 @@
-<div class="w-full md:w-1/2 lg:container mx-auto flex flex-col gap-8" data-controller="flag-command" >
+<div class="w-full md:w-1/2 lg:container mx-auto flex flex-col gap-8" data-controller="rails-command" >
   <!-- TITLE -->
   <h1 class="w-full flex justify-center items-center text-4xl font-bold text-slate-200 py-4">Customize your rails app!!</h1>
 
@@ -7,8 +7,8 @@
     <%= text_field_tag :app_name, nil, id: "appName", 
                        placeholder: "Enter app name",
                        data: {
-                        'flag-command-target': 'input',
-                        action:'keyup->flag-command#updateOutput'
+                        'rails-command-target': 'input',
+                        action:'keyup->rails-command#updateOutput'
                        },
                        type: 'text',
                        class: 'w-full text-slate-900 font-semibold' %>
@@ -25,7 +25,7 @@
         <div class="w-3 h-3 bg-green-500 rounded-full"></div>
       </div>
     </div>
-    <div data-flag-command-target="output"  data-clipboard-target="source" class="p-8 text-lg"></div>
+    <div data-rails-command-target="output"  data-clipboard-target="source" class="p-8 text-lg"></div>
   </div>
 
 
