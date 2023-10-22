@@ -1,0 +1,63 @@
+{
+  "command": {
+    "first_level": { "value": "ps", "label": "ps" },
+    "second_level": [
+      {
+        "value": "all",
+        "flag": "-a",
+        "description": "Muestra todos los contenedores (por defecto muestra sólo los que están en ejecución).",
+        "usage": "docker ps -a",
+        "result": "Muestra todos los contenedores, incluidos los que no están en ejecución."
+      },
+      {
+        "value": "filter",
+        "flag": "-f",
+        "description": "Filtra la salida basada en las condiciones proporcionadas.",
+        "usage": "docker ps -f \"status=exited\"",
+        "result": "Muestra sólo los contenedores que coinciden con el filtro proporcionado."
+      },
+      {
+        "value": "format",
+        "flag": "--format",
+        "description": "Formatea la salida usando una plantilla personalizada. Las opciones incluyen: 'table': Imprimir la salida en formato de tabla con encabezados de columna (por defecto), 'table TEMPLATE': Imprimir la salida en formato de tabla usando la plantilla Go dada, 'json': Imprimir en formato JSON, 'TEMPLATE': Imprimir la salida usando la plantilla Go dada.",
+        "usage": "docker ps --format '{{.Names}}'",
+        "result": "Muestra la salida formateada según la plantilla proporcionada."
+      },
+      {
+        "value": "last",
+        "flag": "-n",
+        "description": "Muestra los últimos n contenedores creados (incluye todos los estados).",
+        "usage": "docker ps -n 3",
+        "result": "Muestra los últimos 3 contenedores creados."
+      },
+      {
+        "value": "latest",
+        "flag": "-l",
+        "description": "Muestra el último contenedor creado (incluye todos los estados).",
+        "usage": "docker ps -l",
+        "result": "Muestra el último contenedor creado."
+      },
+      {
+        "value": "no-trunc",
+        "flag": "--no-trunc",
+        "description": "No truncar la salida.",
+        "usage": "docker ps --no-trunc",
+        "result": "Muestra la salida completa sin truncar."
+      },
+      {
+        "value": "quiet",
+        "flag": "-q",
+        "description": "Muestra sólo los IDs de los contenedores.",
+        "usage": "docker ps -q",
+        "result": "Muestra sólo los IDs de los contenedores."
+      },
+      {
+        "value": "size",
+        "flag": "-s",
+        "description": "Muestra el tamaño total de los archivos.",
+        "usage": "docker ps -s",
+        "result": "Muestra el tamaño total de los archivos para cada contenedor."
+      }
+    ]
+  }
+}

@@ -20,7 +20,7 @@ export default class extends Controller {
     .then(data => {
       const secondLevelOptions = data.second_level || [];
       const options = secondLevelOptions.map(option => {
-        return `<option value="${option.value}" class="text-lg text-slate-200 bg-slate-700">${option.description}</option>`;
+        return `<option value="${option.value}">${option.description}</option>`;
       }).join('');
       this.secondLevelTarget.innerHTML = options;
       this.secondLevelTarget.classList.remove('hidden');
