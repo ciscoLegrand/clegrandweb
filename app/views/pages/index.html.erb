@@ -28,68 +28,97 @@
     <div data-rails-command-target="output"  data-clipboard-target="source" class="p-8 text-lg"></div>
   </div>
 
-
   <!-- SECCION DONDE RENDERIZAR CON ESTILOS BASH EL COMANDO CON FLAGS -->
-  <h2 class="w-full flex justify-center items-center text-4xl font-bold text-slate-200 py-4">Use Rails preset?</h2>
-  <div class="flex flex-col [&>*:nth-child(odd)]:bg-slate-800 [&>*:nth-child(even)]:bg-slate-700 [&>*:first-child]:rounded-t-xl [&>*:last-child]:rounded-b-xl">
-    <%= render(FlagCommandComponent.new(flag: 'preset_none',  type: 'radio', target: 'preset', checked: true,)) %>
-    <%= render(FlagCommandComponent.new(flag: 'api',          type: 'radio', target: 'preset')) %>
-    <%= render(FlagCommandComponent.new(flag: 'minimal',      type: 'radio', target: 'preset')) %>
-  </div>
-  <h2 class="w-full flex justify-center items-center text-4xl font-bold text-slate-200 py-4">Database</h2>
-  <div class="flex flex-col [&>*:nth-child(odd)]:bg-slate-800 [&>*:nth-child(even)]:bg-slate-700 [&>*:first-child]:rounded-t-xl [&>*:last-child]:rounded-b-xl">
-    <%= render(FlagCommandComponent.new(flag: 'sqlite3',   type: 'radio', icon: 'sqlite',      target: 'database', checked: true)) %>
-    <%= render(FlagCommandComponent.new(flag: 'postgres', type: 'radio', icon: 'postgresql',  target: 'database')) %>
-    <%= render(FlagCommandComponent.new(flag: 'mysql',    type: 'radio', icon: 'mysql',       target: 'database')) %>
-    <%#= render(FlagCommandComponent.new(flag: 'mongo', type: 'radio', icon: 'mongodb')) %>
-  </div>
+  <fieldset class="w-full">
+    <h2 class="w-full flex justify-center items-center text-4xl font-bold text-slate-200 py-4">🛖 Use Rails preset?</h2>
+    <div class="flex flex-col [&>*:nth-child(odd)]:bg-slate-800 [&>*:nth-child(even)]:bg-slate-700 [&>*:first-child]:rounded-t-xl [&>*:last-child]:rounded-b-xl">
+      <%= render(FlagCommandComponent.new(flag: 'preset_none',  type: 'radio', target: 'preset', checked: true,)) %>
+      <%= render(FlagCommandComponent.new(flag: 'api',          type: 'radio', target: 'preset')) %>
+      <%= render(FlagCommandComponent.new(flag: 'minimal',      type: 'radio', target: 'preset')) %>
+    </div>
+  </fieldset>
 
-  <h2 class="w-full flex justify-center items-center text-4xl font-bold text-slate-200 py-4">Housekeeping</h2>
-  <div class="flex flex-col [&>*:nth-child(odd)]:bg-slate-800 [&>*:nth-child(even)]:bg-slate-700 [&>*:first-child]:rounded-t-xl [&>*:last-child]:rounded-b-xl">
-    <%= render(FlagCommandComponent.new(flag: 'gitignore',  type: 'checkbox', target: 'housekeeping')) %>
-    <%= render(FlagCommandComponent.new(flag: 'keeps',      type: 'checkbox', target: 'housekeeping')) %>
-    <%= render(FlagCommandComponent.new(flag: 'bootsnap',   type: 'checkbox', target: 'housekeeping')) %>
-    <%= render(FlagCommandComponent.new(flag: 'bundle',     type: 'checkbox', target: 'housekeeping')) %>
-  </div>
-  <h2 class="w-full flex justify-center items-center text-4xl font-bold text-slate-200 py-4">Asset Pipeline</h2>
-  <div class="flex flex-col [&>*:nth-child(odd)]:bg-slate-800 [&>*:nth-child(even)]:bg-slate-700 [&>*:first-child]:rounded-t-xl [&>*:last-child]:rounded-b-xl">
-    <%= render(FlagCommandComponent.new(flag: 'pipeline_none',  type: 'radio', target: 'pipeline', checked: true)) %>
-    <%= render(FlagCommandComponent.new(flag: 'sprockets',      type: 'radio', target: 'pipeline')) %>
-    <%= render(FlagCommandComponent.new(flag: 'propshaft',      type: 'radio', target: 'pipeline')) %>
-  </div>
-  <h2 class="w-full flex justify-center items-center text-4xl font-bold text-slate-200 py-4">JavaScript</h2>
-  <div class="flex flex-col [&>*:nth-child(odd)]:bg-slate-800 [&>*:nth-child(even)]:bg-slate-700 [&>*:first-child]:rounded-t-xl [&>*:last-child]:rounded-b-xl">
-    <%= render(FlagCommandComponent.new(flag: 'javascript_none',  type: 'radio', target: 'javascript', checked: true)) %>
-    <%= render(FlagCommandComponent.new(flag: 'importmap',        type: 'radio', target: 'javascript')) %>
-    <%= render(FlagCommandComponent.new(flag: 'esbuild',          type: 'radio', icon: 'esbuild', target: 'javascript')) %>
-    <%= render(FlagCommandComponent.new(flag: 'rollup',           type: 'radio', icon: 'rollup',  target: 'javascript')) %>
-    <%= render(FlagCommandComponent.new(flag: 'webpack',          type: 'radio', icon: 'webpack', target: 'javascript')) %>
-  </div>
-  <h2 class="w-full flex justify-center items-center text-4xl font-bold text-slate-200 py-4">CSS</h2>
-  <div class="flex flex-col [&>*:nth-child(odd)]:bg-slate-800 [&>*:nth-child(even)]:bg-slate-700 [&>*:first-child]:rounded-t-xl [&>*:last-child]:rounded-b-xl">
-    <%= render(FlagCommandComponent.new(flag: 'css_none',   type: 'radio', target: 'css', checked: true)) %>
-    <%= render(FlagCommandComponent.new(flag: 'bootstrap',  type: 'radio', icon: 'bootstrap', target: 'css')) %>
-    <%= render(FlagCommandComponent.new(flag: 'bulma',      type: 'radio', icon: 'bulma',     target: 'css')) %>
-    <%= render(FlagCommandComponent.new(flag: 'tailwind',   type: 'radio', icon: 'tailwind',  target: 'css')) %>
-    <%= render(FlagCommandComponent.new(flag: 'postcss',    type: 'radio', icon: 'postcss',   target: 'css')) %>
-    <%= render(FlagCommandComponent.new(flag: 'sass',       type: 'radio', icon: 'sass',      target: 'css')) %>
-  </div>
-  <h2 class="w-full flex justify-center items-center text-4xl font-bold text-slate-200 py-4">Rails Goodies</h2>
-  <div class="flex flex-col [&>*:nth-child(odd)]:bg-slate-800 [&>*:nth-child(even)]:bg-slate-700 [&>*:first-child]:rounded-t-xl [&>*:last-child]:rounded-b-xl">
-    <%= render(FlagCommandComponent.new(flag: 'cable',    type: 'checkbox', target: 'goodies')) %>
-    <%= render(FlagCommandComponent.new(flag: 'job',      type: 'checkbox', target: 'goodies')) %>
-    <%= render(FlagCommandComponent.new(flag: 'mailbox',  type: 'checkbox', target: 'goodies')) %>
-    <%= render(FlagCommandComponent.new(flag: 'mailer',   type: 'checkbox', target: 'goodies')) %>
-    <%= render(FlagCommandComponent.new(flag: 'record',   type: 'checkbox', target: 'goodies')) %>
-    <%= render(FlagCommandComponent.new(flag: 'storage',  type: 'checkbox', target: 'goodies')) %>
-    <%= render(FlagCommandComponent.new(flag: 'text',     type: 'checkbox', target: 'goodies')) %>
-    <%= render(FlagCommandComponent.new(flag: 'hotwire',  type: 'checkbox', target: 'goodies')) %>
-    <%= render(FlagCommandComponent.new(flag: 'jbuilder', type: 'checkbox', target: 'goodies')) %>
-  </div>
-  <h2 class="w-full flex justify-center items-center text-4xl font-bold text-slate-200 py-4">Test</h2>
-  <div class="flex flex-col [&>*:nth-child(odd)]:bg-slate-800 [&>*:nth-child(even)]:bg-slate-700 [&>*:first-child]:rounded-t-xl [&>*:last-child]:rounded-b-xl">
-    <%= render(FlagCommandComponent.new(flag: 'test',   type: 'checkbox', target: 'tests')) %>
-    <%= render(FlagCommandComponent.new(flag: 'system-test', type: 'checkbox', target: 'tests')) %>
-  </div>
+  <fieldset class="w-full">
+    <h2 class="w-full flex justify-center items-center text-4xl font-bold text-slate-200 py-4">📖 Database</h2>
+    <legend class="sr-only">Choose a database, MySQL / PostgreSQL / SQLite</legend>
+    <div class="flex flex-col [&>*:nth-child(odd)]:bg-slate-800 [&>*:nth-child(even)]:bg-slate-700 [&>*:first-child]:rounded-t-xl [&>*:last-child]:rounded-b-xl">
+      <%= render(FlagCommandComponent.new(flag: 'sqlite3',    type: 'radio', icon: 'sqlite',      target: 'database', checked: true)) %>
+      <%= render(FlagCommandComponent.new(flag: 'postgresql', type: 'radio', icon: 'postgresql',  target: 'database')) %>
+      <%= render(FlagCommandComponent.new(flag: 'mysql',      type: 'radio', icon: 'mysql',       target: 'database')) %>
+      <%#= render(FlagCommandComponent.new(flag: 'mongo', type: 'radio', icon: 'mongodb')) %>
+    </div>
+  </fieldset>
+
+  <fieldset class="w-full">
+    <h2 class="w-full flex justify-center items-center text-4xl font-bold text-slate-200 py-4">⛵ Housekeeping</h2>
+    <legend class="sr-only">Rails app housekeeping files</legend>
+    <div class="flex flex-col [&>*:nth-child(odd)]:bg-slate-800 [&>*:nth-child(even)]:bg-slate-700 [&>*:first-child]:rounded-t-xl [&>*:last-child]:rounded-b-xl">
+      <%= render(FlagCommandComponent.new(flag: 'gitignore',  type: 'checkbox', target: 'housekeeping')) %>
+      <%= render(FlagCommandComponent.new(flag: 'keeps',      type: 'checkbox', target: 'housekeeping')) %>
+      <%= render(FlagCommandComponent.new(flag: 'bootsnap',   type: 'checkbox', target: 'housekeeping')) %>
+      <%= render(FlagCommandComponent.new(flag: 'bundle',     type: 'checkbox', target: 'housekeeping')) %>
+    </div>
+  </fieldset>
+  <fieldset class="w-full">
+    <h2 class="w-full flex justify-center items-center text-4xl font-bold text-slate-200 py-4">🥮 Asset Pipeline</h2>
+    <legend class="sr-only">Choose a Asset Pipeline strategy</legend>
+    <div class="flex flex-col [&>*:nth-child(odd)]:bg-slate-800 [&>*:nth-child(even)]:bg-slate-700 [&>*:first-child]:rounded-t-xl [&>*:last-child]:rounded-b-xl">
+      <%= render(FlagCommandComponent.new(flag: 'pipeline_none',  type: 'radio', target: 'pipeline', checked: true)) %>
+      <%= render(FlagCommandComponent.new(flag: 'sprockets',      type: 'radio', target: 'pipeline')) %>
+      <%= render(FlagCommandComponent.new(flag: 'propshaft',      type: 'radio', target: 'pipeline')) %>
+    </div>
+  </fieldset>
+  <fieldset class="w-full">
+    <h2 class="w-full flex justify-center items-center text-4xl font-bold text-slate-200 py-4">☢️ JavaScript</h2>
+    <legend class="sr-only">Choose a JavaScript strategy</legend>
+    <div class="flex flex-col [&>*:nth-child(odd)]:bg-slate-800 [&>*:nth-child(even)]:bg-slate-700 [&>*:first-child]:rounded-t-xl [&>*:last-child]:rounded-b-xl">
+      <%= render(FlagCommandComponent.new(flag: 'javascript_none',  type: 'radio', target: 'javascript', checked: true)) %>
+      <%= render(FlagCommandComponent.new(flag: 'importmap',        type: 'radio', target: 'javascript')) %>
+      <%= render(FlagCommandComponent.new(flag: 'esbuild',          type: 'radio', icon: 'esbuild', target: 'javascript')) %>
+      <%= render(FlagCommandComponent.new(flag: 'rollup',           type: 'radio', icon: 'rollup',  target: 'javascript')) %>
+      <%= render(FlagCommandComponent.new(flag: 'webpack',          type: 'radio', icon: 'webpack', target: 'javascript')) %>
+    </div>
+  </fieldset>
+  <fieldset class="w-full">
+    <h2 class="w-full flex justify-center items-center text-4xl font-bold text-slate-200 py-4">🎨 CSS</h2>
+    <legend class="sr-only">Choose a CSS strategy</legend>
+    <div class="flex flex-col [&>*:nth-child(odd)]:bg-slate-800 [&>*:nth-child(even)]:bg-slate-700 [&>*:first-child]:rounded-t-xl [&>*:last-child]:rounded-b-xl">
+      <%= render(FlagCommandComponent.new(flag: 'css_none',   type: 'radio', target: 'css', checked: true)) %>
+      <%= render(FlagCommandComponent.new(flag: 'bootstrap',  type: 'radio', icon: 'bootstrap', target: 'css')) %>
+      <%= render(FlagCommandComponent.new(flag: 'bulma',      type: 'radio', icon: 'bulma',     target: 'css')) %>
+      <%= render(FlagCommandComponent.new(flag: 'tailwind',   type: 'radio', icon: 'tailwind',  target: 'css')) %>
+      <%= render(FlagCommandComponent.new(flag: 'postcss',    type: 'radio', icon: 'postcss',   target: 'css')) %>
+      <%= render(FlagCommandComponent.new(flag: 'sass',       type: 'radio', icon: 'sass',      target: 'css')) %>
+    </div>
+  </fieldset>
+  <fieldset class="w-full">
+    <h2 class="w-full flex justify-center items-center text-4xl font-bold text-slate-200 py-4">💎 Rails Goodies</h2>
+    <legend class="sr-only">Rails library like ActiveRecord etc</legend>
+    <div class="flex flex-col [&>*:nth-child(odd)]:bg-slate-800 [&>*:nth-child(even)]:bg-slate-700 [&>*:first-child]:rounded-t-xl [&>*:last-child]:rounded-b-xl">
+      <%= render(FlagCommandComponent.new(flag: 'cable',    type: 'checkbox', target: 'goodies')) %>
+      <%= render(FlagCommandComponent.new(flag: 'job',      type: 'checkbox', target: 'goodies')) %>
+      <%= render(FlagCommandComponent.new(flag: 'mailbox',  type: 'checkbox', target: 'goodies')) %>
+      <%= render(FlagCommandComponent.new(flag: 'mailer',   type: 'checkbox', target: 'goodies')) %>
+      <%= render(FlagCommandComponent.new(flag: 'record',   type: 'checkbox', target: 'goodies')) %>
+      <%= render(FlagCommandComponent.new(flag: 'storage',  type: 'checkbox', target: 'goodies')) %>
+      <%= render(FlagCommandComponent.new(flag: 'text',     type: 'checkbox', target: 'goodies')) %>
+      <%= render(FlagCommandComponent.new(flag: 'hotwire',  type: 'checkbox', target: 'goodies')) %>
+      <%= render(FlagCommandComponent.new(flag: 'jbuilder', type: 'checkbox', target: 'goodies')) %>
+    </div>
+  </fieldset>
+  <fieldset class="w-full">
+    <h2 class="w-full flex justify-center items-center text-4xl font-bold text-slate-200 py-4">🧪 Test</h2>
+    <legend class="sr-only">Testing configuration</legend>
+    <div class="flex flex-col [&>*:nth-child(odd)]:bg-slate-800 [&>*:nth-child(even)]:bg-slate-700 [&>*:first-child]:rounded-t-xl [&>*:last-child]:rounded-b-xl">
+      <%= render(FlagCommandComponent.new(flag: 'test',   type: 'checkbox', target: 'tests')) %>
+      <%= render(FlagCommandComponent.new(flag: 'system-test', type: 'checkbox', target: 'tests')) %>
+    </div>
+  </fieldset>
+  <fieldset class="w-full">
+    <h2 class="w-full flex justify-center items-center text-4xl font-bold text-slate-200 py-4">🐋 Kamal</h2>
+    <legend class="sr-only">Kamal configuration</legend>
+    <div class="flex flex-col [&>*:nth-child(odd)]:bg-slate-800 [&>*:nth-child(even)]:bg-slate-700 [&>*:first-child]:rounded-t-xl [&>*:last-child]:rounded-b-xl">
+      <%= render(FlagCommandComponent.new(flag: 'docker',   type: 'checkbox', target: 'docker', icon: 'docker')) %>
+    </div>
+  </fieldset>
 </div>
-

@@ -1,0 +1,222 @@
+[
+  {
+    "tech": "git",
+    "command": "add",
+    "usage": "git add [OPTIONS] [PATHSPEC]",
+    "result": {
+      "es": "Agrega cambios en el directorio de trabajo al área de preparación para el próximo commit",
+      "en": "Add changes in the working directory to the staging area for the next commit"
+    },
+    "level": 2
+  },
+  {
+    "tech": "git",
+    "command": "bisect",
+    "usage": "git bisect [OPTIONS]",
+    "result": {
+      "es": "Utiliza la búsqueda binaria para encontrar el commit que introdujo un error",
+      "en": "Use binary search to find the commit that introduced a bug"
+    },
+    "level": 2
+  },
+  {
+    "tech": "git",
+    "command": "branch",
+    "usage": "git branch [OPTIONS] [BRANCH_NAME]",
+    "result": {
+      "es": "Lista, crea o borra ramas",
+      "en": "List, create, or delete branches"
+    },
+    "level": 2
+  },
+  {
+    "tech": "git",
+    "command": "checkout",
+    "usage": "git checkout [OPTIONS] [BRANCH]",
+    "result": {
+      "es": "Cambia ramas o restaura archivos del árbol de trabajo",
+      "en": "Switch branches or restore working tree files"
+    },
+    "level": 2
+  },
+  {
+    "tech": "git",
+    "command": "clone",
+    "usage": "git clone [OPTIONS] REPOSITORY [DIRECTORY]",
+    "result": {
+      "es": "Clona un repositorio en un nuevo directorio",
+      "en": "Clone a repository into a new directory"
+    },
+    "level": 2
+  },
+  {
+    "tech": "git",
+    "command": "commit",
+    "usage": "git commit [OPTIONS]",
+    "result": {
+      "es": "Registra cambios en el repositorio",
+      "en": "Record changes to the repository"
+    },
+    "level": 2
+  },
+  {
+    "tech": "git",
+    "command": "config",
+    "usage": "git config [OPTIONS]",
+    "result": {
+      "es": "Obtiene y establece variables de configuración de Git",
+      "en": "Get and set Git configuration variables"
+    },
+    "level": 2
+  },
+  {
+    "tech": "git",
+    "command": "diff",
+    "usage": "git diff [OPTIONS] [COMMIT]",
+    "result": {
+      "es": "Muestra cambios entre commits, commit y área de preparación, etc",
+      "en": "Show changes between commits, commit and working tree, etc"
+    },
+    "level": 2
+  },
+  {
+    "tech": "git",
+    "command": "fetch",
+    "usage": "docker fetch [OPTIONS] [REPOSITORY]",
+    "result": {
+      "es": "Descarga objetos y referencias de otro repositorio",
+      "en": "Download objects and refs from another repository"
+    },
+    "level": 2
+  },
+  {
+    "tech": "git",
+    "command": "grep",
+    "usage": "git grep [OPTIONS] PATTERN",
+    "result": {
+      "es": "Imprime líneas que coinciden con un patrón",
+      "en": "Print lines matching a pattern"
+    },
+    "level": 2
+  },
+  {
+    "tech": "git",
+    "command": "init",
+    "usage": "git init [OPTIONS]",
+    "result": {
+      "es": "Crea un nuevo repositorio Git o reinicializa uno existente",
+      "en": "Create a new Git repository or reinitialize an existing one"
+    },
+    "level": 2
+  },
+  {
+    "tech": "git",
+    "command": "log",
+    "usage": "git log [OPTIONS]",
+    "result": {
+      "es": "Muestra el historial de commits",
+      "en": "Show the commit logs"
+    },
+    "level": 2
+  },
+  {
+    "tech": "git",
+    "command": "merge",
+    "usage": "git merge [OPTIONS] [BRANCH]",
+    "result": {
+      "es": "Combina dos o más historias de desarrollo juntas",
+      "en": "Join two or more development histories together"
+    },
+    "level": 2
+  },
+  {
+    "tech": "git",
+    "command": "mv",
+    "usage": "git mv [OPTIONS] SOURCE DEST",
+    "result": {
+      "es": "Mueve o renombra un archivo, un directorio o un enlace simbólico",
+      "en": "Move or rename a file, a directory, or a symlink"
+    },
+    "level": 2
+  },
+  {
+    "tech": "git",
+    "command": "pull",
+    "usage": "git pull [OPTIONS] [REPOSITORY]",
+    "result": {
+      "es": "Descarga cambios y actualiza el repositorio local para que coincida con el remoto",
+      "en": "Fetch from and integrate with another repository or a local branch"
+    },
+    "level": 2
+  },
+  {
+    "tech": "git",
+    "command": "push",
+    "usage": "git push [OPTIONS] [REPOSITORY]",
+    "result": {
+      "es": "Actualiza referencias remotas junto con objetos asociados",
+      "en": "Update remote refs along with associated objects"
+    },
+    "level": 2
+  },
+  {
+    "tech": "git",
+    "command": "rebase",
+    "usage": "git rebase [OPTIONS]",
+    "result": {
+      "es": "Reaplica cambios de commits en otra rama",
+      "en": "Reapply changes from commits onto another branch"
+    },
+    "level": 2
+  },
+  {
+    "tech": "git",
+    "command": "reset",
+    "usage": "git reset [OPTIONS] [COMMIT]",
+    "result": {
+      "es": "Restablece el HEAD actual a un estado especificado",
+      "en": "Reset current HEAD to the specified state"
+    },
+    "level": 2
+  },
+  {
+    "tech": "git",
+    "command": "rm",
+    "usage": "git rm [OPTIONS] FILE",
+    "result": {
+      "es": "Elimina archivos del árbol de trabajo y del índice",
+      "en": "Remove files from the working tree and from the index"
+    },
+    "level": 2
+  },
+  {
+    "tech": "git",
+    "command": "show",
+    "usage": "git show [OPTIONS] [COMMIT]",
+    "result": {
+      "es": "Muestra información sobre objetos Git",
+      "en": "Show information about Git objects"
+    },
+    "level": 2
+  },
+  {
+    "tech": "git",
+    "command": "status",
+    "usage": "git status [OPTIONS]",
+    "result": {
+      "es": "Muestra el estado del árbol de trabajo",
+      "en": "Show the working tree status"
+    },
+    "level": 2
+  },
+  {
+    "tech": "git",
+    "command": "tag",
+    "usage": "git tag [OPTIONS] [TAG_NAME]",
+    "result": {
+      "es": "Crea, lista, elimina o verifica un tag firmado con GPG",
+      "en": "Create, list, delete or verify a tag object signed with GPG"
+    },
+    "level": 2
+  }
+]

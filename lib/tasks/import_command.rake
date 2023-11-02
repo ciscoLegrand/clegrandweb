@@ -94,6 +94,8 @@ namespace :import do
     ]
 
     docker_frequently_commands.each_with_index do |command, idx|
+    # rails = ['rails new', 'rails server', 'rails plugin', 'rails console']
+    # rails.each_with_index do |command, idx|
       puts "[#{idx+1}/#{docker_frequently_commands.size}] Command #{command}"
 
       suggester = DockerCommandsGenerator.new(command)

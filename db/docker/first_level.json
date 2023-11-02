@@ -1,0 +1,401 @@
+[
+  {
+    "tech": "docker",
+    "command": "attach",
+    "description": "Attach streams to running container",
+    "result": "Usage: docker attach [OPTIONS] CONTAINER",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "build",
+    "description": "Build image from Dockerfile",
+    "result": "Usage: docker build [OPTIONS] PATH | URL | -",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "builder",
+    "description": "Manage build operations",
+    "result": "Usage: docker builder COMMAND",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "checkpoint",
+    "description": "Manage container checkpoints",
+    "result": "Usage: docker checkpoint COMMAND",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "commit",
+    "description": "Create image from container changes",
+    "result": "Usage: docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "config",
+    "description": "Manage Swarm config files",
+    "result": "Usage: docker config COMMAND",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "container",
+    "description": "Container operations",
+    "result": "Usage: docker container COMMAND",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "context",
+    "description": "Switch between contexts",
+    "result": "Usage: docker context COMMAND",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "cp",
+    "description": "Copy files/folders to/from container",
+    "result": "Usage: docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH|-",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "create",
+    "description": "Create a new container",
+    "result": "Usage: docker create [OPTIONS] IMAGE [COMMAND] [ARG...]",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "diff",
+    "description": "Inspect container file changes",
+    "result": "Usage: docker diff CONTAINER",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "events",
+    "description": "Real-time server events",
+    "result": "Usage: docker events [OPTIONS]",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "exec",
+    "description": "Run command in running container",
+    "result": "Usage: docker exec [OPTIONS] CONTAINER COMMAND [ARG...]",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "export",
+    "description": "Export container as tar archive",
+    "result": "Usage: docker export [OPTIONS] CONTAINER",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "history",
+    "description": "Show image history",
+    "result": "Usage: docker history [OPTIONS] IMAGE",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "image",
+    "description": "Manage Docker images",
+    "result": "Usage: docker image COMMAND",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "images",
+    "description": "List available images",
+    "result": "Usage: docker images [OPTIONS]",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "import",
+    "description": "Import tarball as filesystem image",
+    "result": "Usage: docker import [OPTIONS] file|URL|- [REPOSITORY[:TAG]]",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "info",
+    "description": "System-wide information",
+    "result": "Usage: docker info [OPTIONS]",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "inspect",
+    "description": "Low-level information on Docker objects",
+    "result": "Usage: docker inspect [OPTIONS] NAME|ID [NAME|ID...]",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "kill",
+    "description": "Kill running containers",
+    "result": "Usage: docker kill [OPTIONS] CONTAINER [CONTAINER...]",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "load",
+    "description": "Load image from tar archive",
+    "result": "Usage: docker load [OPTIONS]",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "login",
+    "description": "Registry login",
+    "result": "Usage: docker login [OPTIONS] [SERVER]",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "logout",
+    "description": "Registry logout",
+    "result": "Usage: docker logout [SERVER]",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "logs",
+    "description": "Fetch container logs",
+    "result": "Usage: docker logs [OPTIONS] CONTAINER",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "manifest",
+    "description": "Manage image manifests",
+    "result": "Usage: docker manifest COMMAND",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "network",
+    "description": "Manage networks",
+    "result": "Usage: docker network COMMAND",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "node",
+    "description": "Manage Swarm nodes",
+    "result": "Usage: docker node COMMAND",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "pause",
+    "description": "Pause container processes",
+    "result": "Usage: docker pause CONTAINER [CONTAINER...]",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "plugin",
+    "description": "Manage plugins",
+    "result": "Usage: docker plugin COMMAND",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "port",
+    "description": "List port mappings",
+    "result": "Usage: docker port CONTAINER [PRIVATE_PORT[/PROTO]]",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "ps",
+    "description": "List containers",
+    "result": "Usage: docker ps [OPTIONS]",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "pull",
+    "description": "Download image from registry",
+    "result": "Usage: docker pull [OPTIONS] NAME[:TAG|@DIGEST]",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "push",
+    "description": "Upload image to registry",
+    "result": "Usage: docker push [OPTIONS] NAME[:TAG]",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "rename",
+    "description": "Rename a container",
+    "result": "Usage: docker rename CONTAINER NEW_NAME",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "restart",
+    "description": "Restart containers",
+    "result": "Usage: docker restart [OPTIONS] CONTAINER [CONTAINER...]",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "rm",
+    "description": "Remove containers",
+    "result": "Usage: docker rm [OPTIONS] CONTAINER [CONTAINER...]",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "rmi",
+    "description": "Remove images",
+    "result": "Usage: docker rmi [OPTIONS] IMAGE [IMAGE...]",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "run",
+    "description": "Create and start container",
+    "result": "Usage: docker run [OPTIONS] IMAGE [COMMAND] [ARG...]",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "save",
+    "description": "Save images to tar archive",
+    "result": "Usage: docker save [OPTIONS] IMAGE [IMAGE...]",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "search",
+    "description": "Search Docker Hub images",
+    "result": "Usage: docker search [OPTIONS] TERM",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "secret",
+    "description": "Manage Swarm secrets",
+    "result": "Usage: docker secret COMMAND",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "service",
+    "description": "Manage Swarm services",
+    "result": "Usage: docker service COMMAND",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "stack",
+    "description": "Manage Swarm stacks",
+    "result": "Usage: docker stack COMMAND",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "start",
+    "description": "Start stopped containers",
+    "result": "Usage: docker start [OPTIONS] CONTAINER [CONTAINER...]",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "stats",
+    "description": "Live container statistics",
+    "result": "Usage: docker stats [OPTIONS] [CONTAINER...]",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "stop",
+    "description": "Stop running containers",
+    "result": "Usage: docker stop [OPTIONS] CONTAINER [CONTAINER...]",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "swarm",
+    "description": "Manage Swarm cluster",
+    "result": "Usage: docker swarm COMMAND",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "system",
+    "description": "Manage Docker system",
+    "result": "Usage: docker system COMMAND",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "tag",
+    "description": "Create image tag",
+    "result": "Usage: docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "top",
+    "description": "Display container processes",
+    "result": "Usage: docker top CONTAINER [ps OPTIONS]",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "trust",
+    "description": "Manage image trust",
+    "result": "Usage: docker trust COMMAND",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "unpause",
+    "description": "Unpause container processes",
+    "result": "Usage: docker unpause CONTAINER [CONTAINER...]",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "update",
+    "description": "Update container config",
+    "result": "Usage: docker update [OPTIONS] CONTAINER [CONTAINER...]",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "version",
+    "description": "Show version info",
+    "result": "Usage: docker version [OPTIONS]",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "volume",
+    "description": "Manage volumes",
+    "result": "Usage: docker volume COMMAND",
+    "level": 1
+  },
+  {
+    "tech": "docker",
+    "command": "wait",
+    "description": "Block until containers stop",
+    "result": "Usage: docker wait CONTAINER [CONTAINER...]",
+    "level": 1
+  }
+]

@@ -1,7 +1,7 @@
 import { Controller } from '@hotwired/stimulus'
 
 export default class extends Controller {
-  static targets = ['input', 'output', 'preset', 'database', 'housekeeping', 'pipeline','javascript', 'css', 'goodies', 'tests']
+  static targets = ['input', 'output', 'preset', 'database', 'housekeeping', 'pipeline','javascript', 'css', 'goodies', 'tests', 'docker']
 
   connect() {
     console.log('FlagCommandController connected!')
@@ -18,6 +18,7 @@ export default class extends Controller {
     const cssCommand = this.getCssCommand()
     const activeCommand = this.getActiveCommand()
     const testCommand = this.getTestCommand()
+    const dockerCommand = this.getDockerCommand()
     this.outputTarget.innerHTML = `
       <span class='text-red-600'>$ </span>
       <span class='text-pink-600'>rails new</span> 
@@ -31,6 +32,7 @@ export default class extends Controller {
         ${cssCommand}
         ${activeCommand}
         ${testCommand}
+        ${dockerCommand}
       </span>
     ` 
   }
@@ -100,6 +102,18 @@ export default class extends Controller {
   getTestCommand() {
     const defaultSkips = ['test', 'system-test']
     const checkedFlags = this.testsTargets.filter(checkbox => checkbox.checked).map(checkbox => checkbox.value)
+  
+    const skipCommands = defaultSkips
+      .filter(flag => !checkedFlags.includes(flag))
+      .map(flag => `--skip-${flag}`)
+      .join(' ')
+  
+    return skipCommands
+  }
+
+  getDockerCommand() {
+    const defaultSkips = ['docker']
+    const checkedFlags = this.dockerTargets.filter(checkbox => checkbox.checked).map(checkbox => checkbox.value)
   
     const skipCommands = defaultSkips
       .filter(flag => !checkedFlags.includes(flag))

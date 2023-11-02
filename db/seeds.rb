@@ -1,9 +1,38 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+require_relative '../docker/management/docker_buildx_command'
+
+# Método para crear comandos y subcomandos de forma recursiva
+def create_command(data, parent_id = nil)
+  command = Command.create(
+    tech: data[:tech],
+    command: data[:command],
+    usage: data[:usage],
+    result_es: data[:result][:es],
+    result_en: data[:result][:en],
+    level: data[:level],
+    nb_es: data[:nb][:es],
+    nb_en: data[:nb][:en],
+    parent_id: parent_id
+  )
+
+  # Crea opciones
+  data[:options].each do |option|
+    Option.create(
+      command_id: command.id,
+      long: option[:long],
+      type: option[:type],
+      level: option[:level],
+      usage: option[:usage],
+      nb_es: option[:nb][:es],
+      nb_en: option[:nb][:en]
+    )
+  end
+
+
+  # Crea subcomandos
+  data[:subcommands].each do |subcommand_data|
+    create_command(subcommand_data, command.id)
+  end
+end
+
+# Inicia la creación de comandos y subcomandos
+create_command(docker_buildx_command)

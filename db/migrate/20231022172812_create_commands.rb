@@ -3,14 +3,12 @@ class CreateCommands < ActiveRecord::Migration[7.1]
     create_table :commands, id: :uuid do |t|
       t.string :tech
       t.string :command
-      t.string :flag
-      t.string :flag_long
-      t.string :flag_short
-      t.string :description
-      t.string :result
       t.string :usage
+      t.integer :level
+      t.uuid :parent_id, index: true, null: true
 
       t.timestamps
     end
+    add_foreign_key :commands, :commands, column: :parent_id
   end
 end
