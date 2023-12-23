@@ -5,7 +5,7 @@ module Openai
     attr_reader :api_url, :options, :model, :max_tokens, :temperature, :context
 
     def initialize(config = {})
-      api_key = Figaro.env.openai_api_key
+      api_key = Rails.application.credentials.openai[:api_key]
       @options = {
         headers: {
           'Content-Type' => 'application/json',
@@ -39,4 +39,3 @@ module Openai
     end
   end
 end
-

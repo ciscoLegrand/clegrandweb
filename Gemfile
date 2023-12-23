@@ -71,9 +71,6 @@ group :test do
   gem "selenium-webdriver"
 end
 
-# env
-gem 'figaro'
-
 gem 'view_component'
 gem 'inline_svg'
 gem "dockerfile-rails", ">= 1.5", :group => :development
@@ -85,4 +82,3 @@ gem "sentry-rails", "~> 5.12"
 gem 'nokogiri'
 gem 'httparty'
 gem "ruby-openai"
-
